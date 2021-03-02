@@ -81,3 +81,5 @@ class ErrorTrace {
     this.promiseError();
   }
 }
+
+export default ErrorTrace;

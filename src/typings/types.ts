@@ -1,3 +1,14 @@
+export interface IYidengDataConsumption {
+  beacon: number;
+  css: number;
+  fetch: number;
+  img: number;
+  other: number;
+  script: number;
+  total: number;
+  xmlhttprequest: number;
+}
+
 export interface IReportData {
   sendToAnalytics(level: AskPriority, body: string): void;
 }
@@ -94,4 +105,37 @@ export interface IPerformanceConfig {
   isElementTiming: boolean;
   analysisTracker?: (options: IAnalyticsTrackerOptions) => void;
   maxTime: number;
+}
+
+export interface IPerfObservers {
+  [measureName:string]: any;
+}
+
+export type IPerformanceObserverType = 
+| 'first-input'
+  | 'largest-contentful-paint'
+  | 'layout-shift'
+  | 'longtask'
+  | 'measure'
+  | 'navigation'
+  | 'paint'
+  | 'element'
+  | 'resource';
+
+  //度量指标数据
+export interface IMetricMap {
+  [measureName: string]: boolean;
+}
+export declare interface IPerformanceEntry {
+  decodedBodySize?: number;
+  duration: number;
+  entryType: IPerformanceObserverType;
+  initiatorType?: IPerformanceEntryInitiatorType;
+  loadTime: number;
+  name: string;
+  renderTime: number;
+  startTime: number;
+  hadRecentInput?: boolean;
+  value?: number;
+  identifier?: string;
 }
