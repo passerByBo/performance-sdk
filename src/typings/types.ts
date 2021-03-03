@@ -139,3 +139,14 @@ export declare interface IPerformanceEntry {
   value?: number;
   identifier?: string;
 }
+
+// https://wicg.github.io/event-timing/#sec-performance-event-timing
+export interface PerformanceEventTiming extends PerformanceEntry {
+  processingStart: DOMHighResTimeStamp;
+  target?: Node;
+}
+
+export interface IPerfumeData{
+  
+}
+
